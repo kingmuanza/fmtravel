@@ -1,0 +1,25 @@
+<div class="reservation-choix">
+    <div class="contenu">
+        <div class="recommandations">
+            <div class="recommandations-titre">
+                Agences de voyages
+            </div>
+            <div class="recommandations-sous-titre">
+                Liste des agences partenaires
+            </div>
+            <div>
+                <div class="recommandations-agences">
+                    <div class="row">
+                        <ng-container *ngFor="let agence of agences; let i=index">
+                            <div class="col-lg-4 col-6">
+                                <div (click)="ouvrir(agence)" style="cursor: pointer;">
+                                    <app-display-agence [agence]="agence"></app-display-agence>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

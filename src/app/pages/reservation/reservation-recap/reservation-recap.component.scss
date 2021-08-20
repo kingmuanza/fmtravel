@@ -1,0 +1,179 @@
+.reservation {
+    padding-top: 100px;
+    @media screen and (max-width: 599px) {
+        padding-top: 60px;
+    }
+
+    min-height: 100vh;
+
+    .etape {
+        height: 5px;
+        border-radius: 5px;
+
+        &.en-cours {
+            background-color: orange;
+        }
+
+        &.a-venir {
+            background-color: #aaa;
+        }
+
+        &.termine {
+            background-color: rgba(15, 112, 183, 1);
+        }
+    }
+}
+
+button {
+    @media screen and (max-width: 599px) {
+        width: 100%;
+    }
+}
+
+.informations {
+    margin-top: 20px;
+    line-height: 1.15;
+
+    @media screen and (max-width: 599px) {
+        margin-top: 0px;
+    }
+    .informations-titre {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    .informations-sous-titre {
+        line-height: 1.15;
+        margin-bottom: 10px;
+    }
+}
+
+.formulaire {
+    margin-top: 20px;
+    padding: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 10px;
+    border: 2px solid rgba(15, 112, 183, 1);
+    div {
+        margin-bottom: 10px;
+    }
+
+}
+
+.boutons {
+    margin-top: 20px;
+}
+.agence {
+    &-nom {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    &-description {
+        font-size: 1.2em;
+        font-weight: 100;
+        margin-bottom: 20px;
+    }
+} 
+
+.trajet {
+    &-libelle {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    &-villes {
+        font-size: 1.2em;
+        font-weight: 100;
+        margin-bottom: 20px;
+    }
+}
+
+.location-date {
+    padding: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #eee;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.voiture {
+    &-nom {
+        font-size: 1.8em;
+        font-weight: bold;
+    }
+
+    &-description {
+        font-size: 1.2em;
+        font-weight: 100;
+        margin-bottom: 20px;
+    }
+}
+
+
+.user {
+    
+    &-nom {
+        padding-top: 20px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    &-tel {
+        margin-top: 5px;
+        font-size: 1.4em;
+        font-weight: 100;
+    }
+
+}
+
+* {
+    font-family: 'Montserrat';
+}
+
+.agence-info-titre {
+    font-size: 40px;
+    font-weight: bold;
+
+
+}
+
+.qr-code {
+    height: 300px;
+    background-color: #ddd;
+    background-position: center center;
+    background-size: cover;
+}
+
+.muanza-bold {
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.muanza-badge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    span {
+        background-color: #303030;
+        color: #fff;
+        padding: 10px;
+        display: inline-block;
+        text-transform: uppercase;
+    }
+}
+.ticket {
+    background-color: #eee;
+    padding: 20px;
+}
+.ticket-infos {
+    font-size: 18px;
+}
+
+.ticket-case {
+    height: 300px;
+    padding-right: 10px;
+    border-right: 1px solid #aaa;
+}

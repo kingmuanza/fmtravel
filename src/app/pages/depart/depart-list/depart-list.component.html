@@ -1,0 +1,109 @@
+<div class="page">
+    <div class="entete">
+
+        <div class="entete__background">
+        </div>
+        <div class="entete__contenu contenu">
+
+            <div style="margin-left: 0px; margin-bottom: -20px;">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Library</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="cell-lg-12">
+                    <div class="titre">
+                        {{trajet && trajet.villeDepart === trajet.villeArrivee ? 'Location de voiture' : 'Départs'}}
+                    </div>
+                    <div *ngIf="trajet" class="sous-titre text-leader2">
+                        <div *ngIf="trajet.villeDepart === trajet.villeArrivee">
+                            {{trajet.villeDepart}}
+                        </div>
+                        <div *ngIf="trajet.villeDepart !== trajet.villeArrivee">
+                            {{trajet.villeDepart}} - {{trajet.villeArrivee}}
+                            <span class="petit-float">
+                                <span class="mif-meter">
+
+                                </span>
+                                <span style="margin-left: 10px;">
+                                    {{trajet.duree ? trajet.duree: 'Aucune information sur la durée du trajet'}}
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contenu">
+        <div>
+            <div>
+                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Ville</th>
+                            <th>Modèle</th>
+                            <th>Agence</th>
+                            <th>Prix journalier</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let depart of departs" style="cursor: pointer;">
+                            <tr (click)="reservation(depart, '')" style="cursor: pointer;">
+                                <td>{{ depart.trajet.villeDepart }}</td>
+                                <td>{{ depart.modele }}</td>
+                                <td>{{ depart.agence.nom }}</td>
+                                <td>{{ depart.prix }}</td>
+                            </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+            </div>
+            <div *ngIf="trajet.villeDepart !== trajet.villeArrivee" class="trajets">
+                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+                    <thead>
+                        <tr>
+                            <th>Ville de départ</th>
+                            <th>Ville d'arrivée</th>
+                            <th>Type</th>
+                            <th>Agence</th>
+                            <th>Prix</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let depart of departs">
+                            <tr (click)="reservation(depart, '')" style="cursor: pointer;">
+
+                                <td>{{ depart.trajet.villeDepart }}</td>
+                                <td (click)="reservation(depart, '')">{{ depart.trajet.villeArrivee }}</td>
+                                <td (click)="reservation(depart, '')">
+
+                                    <span *ngIf="depart.vip" class="vip">
+                                        VIP
+                                    </span>
+                                    <span *ngIf="!depart.vip" class="standard">
+                                        Standard
+                                    </span>
+                                </td>
+                                <td>{{ depart.agence.nom }}</td>
+                                <td>{{ depart.prix }}</td>
+                            </tr>
+                        </ng-container>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Ville de départ</th>
+                            <th>Ville d'arrivée</th>
+                            <th>Type</th>
+                            <th>Agence</th>
+                            <th>Prix</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

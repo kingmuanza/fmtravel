@@ -1,0 +1,32 @@
+.live-infos {
+    height: 450px;
+    margin-top: 10px;
+    overflow: hidden;
+
+    .live-info {
+        background-color: #303030;
+        height: 82px;
+        border-radius: 25px;
+        margin-bottom: 10px;
+        color: #eee;
+        padding: 25px;
+        text-align: center;
+    }
+}
+
+.disparaitre {
+    animation-name: disparaitre;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes disparaitre {
+    0% {
+        opacity: 0.5;
+        transform: scaleY(0%);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(100%);
+    }
+}

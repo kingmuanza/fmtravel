@@ -1,0 +1,199 @@
+.location-voiture {
+    height: 430px;
+    // background-color: #e0e0e0;
+    // background-color: red;
+    margin-top: 0px;
+    padding-top: 60px;
+    background-color: rgba(#fff, 1);
+    overflow: hidden;
+    // background: none;
+    line-height: 1.25;
+
+    @media screen and (max-width: 599px) {
+        height: 580px;
+    }
+
+    .location-voiture-titre {
+        font-size: 40px;
+        margin-top: 40px;
+
+        @media screen and (max-width: 599px) {
+            margin-top: 0px;
+        }
+
+        line-height: 1.1;
+    }
+
+    .location-voiture-sous-titre {
+        margin-top: 5px;
+        margin-bottom: 20px;
+    }
+}
+
+.les-voitures {
+    // margin-top: 200px;
+    // min-height: 800px;
+    background-color: #a0a0a0;
+
+    @media screen and (max-width: 599px) {}
+
+
+    .une-voiture {
+        background-color: #303030;
+        // background-image: url('../../../../assets/img/lambo.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 300px;
+        margin-top: -135px;
+        // margin-bottom: 145px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: margin-top 200ms;
+        overflow: hidden;
+        line-height: 1.1;
+
+
+        @media screen and (max-width: 599px) {}
+
+        &:hover {
+            // margin-top: -150px;
+        }
+
+        &-description {
+            margin-top: 40px;
+            margin-bottom: 155px;
+            color: white;
+            background: linear-gradient(to right, rgba(15, 112, 183, 0.9), rgb(21, 99, 155, 0.9));
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            line-height: 1.1;
+        }
+
+        &-prix {
+            font-size: 25px;
+            font-weight: bold;
+        }
+    }
+}
+
+
+.formulaire {
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    .input-muanza {
+        white-space: nowrap;
+
+        span.icone {
+            font-size: 1.3em;
+            color: rgb(15, 112, 183);
+            color: #333;
+            width: 35px;
+            margin-left: 15px;
+            padding-top: 5px;
+            overflow-x: hidden;
+            // background-color: red;
+            display: block;
+            margin-top: 10px;
+            height: 47px;
+        }
+
+        .champ {
+            height: 50px;
+            margin-top: -52px;
+        }
+
+        input,
+        select {
+            background-color: rgba(#fff, 0);
+            width: 100%;
+            outline: none;
+            height: 47px;
+            border: 2px solid #303030;
+            border-radius: 10px;
+            padding-left: 50px;
+            padding-bottom: 5px;
+            color: #303030;
+            font-size: 1.1em;
+
+            option {
+                color: #303030;
+            }
+        }
+
+        select {
+            padding-right: 10px;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .select-wrapper {
+            position: relative;
+        }
+
+        .select-wrapper::after {
+            content: "▼";
+            font-size: 1rem;
+            top: 6px;
+            right: 10px;
+            position: absolute;
+        }
+    }
+}
+
+
+.boutons {
+    margin-top: 10px;
+    margin-left: -6px;
+
+    button.muanza-bouton {
+        height: 47px;
+        background-color: orange;
+        // color: white;
+        padding: 10px;
+        padding-left: 50px;
+        padding-right: 50px;
+        border: none;
+        border-radius: 10px;
+
+    }
+
+    button.muanza-bouton-outline {
+        margin-top: -10px;
+        // height: 50px;
+        background: none;
+        // color: white;
+        font-size: 1.3em;
+        padding: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
+        border: 0px solid orange;
+        color: orange;
+        border-radius: 10px;
+        font-weight: bold;
+
+    }
+}
+
+.boutons-carousel {
+    margin-top: 30px;
+
+    button.muanza-bouton-outline {
+        margin-top: -30px;
+        // height: 50px;
+        background: none;
+        // color: white;
+        font-size: 1.3em;
+        padding: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
+        border: 0px solid orange;
+        color: orange;
+        border-radius: 10px;
+        font-weight: bold;
+
+    }
+}

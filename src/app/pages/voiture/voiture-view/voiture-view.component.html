@@ -1,0 +1,149 @@
+<div style="width: 100vw; overflow-x: hidden; background-color: rgba(#fff, 1);min-height: 60vh;">
+
+    <div class="location-voiture">
+        <div class="contenu">
+            <h1 class="location-voiture-titre">
+                {{voiture ? voiture.modele : 'Veuillez patienter...'}}
+            </h1>
+            <div style="color: orange; margin-bottom: 5px; font-size: 1.2em;margin-top: -5px; ">
+                <span class="fas fa-star"></span>
+                <span class="fas fa-star"></span>
+                <span class="fas fa-star"></span>
+                <span class="fas fa-star"></span>
+                <span class="fas fa-star"></span>
+            </div>
+            <b style="font-size: 1.2em;" *ngIf="voiture" class="une-voiture-prix">
+                {{voiture.prixJournalier}} FCFA / Jour
+            </b>,
+            <span *ngIf="voiture" class="location-voiture-sous-titre">
+                {{voiture.categorie}} :
+                <span>
+                    {{voiture.sieges}} sièges,
+                    {{voiture.portes}} portes,
+                    {{voiture.transmission}}
+                </span>
+            </span>
+
+            <div class="row" style="margin-top: 5px; padding-left: 0px;">
+                <div class="col-lg-3 col-7 " style="padding-right: 0;">
+                    <div class="formulaire">
+                        <div class="input-muanza">
+                            <span class="icone">
+                                <span class="fas fa-calendar"></span>
+                            </span>
+                            <div class="champ">
+                                <input class="debut" data-toggle="datepicker" placeholder="Début de la location">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-5" style="margin: 0;">
+                    <div class="formulaire">
+                        <div class="input-muanza">
+                            <span class="icone">
+                                <span class="fas fa-clock"></span> 
+                            </span>
+                            <div class="champ">
+                                <select style="padding-left: 40px;" [(ngModel)]="heureDebut">
+                                    <option [ngValue]="h" *ngFor="let h of heures">
+                                        {{h}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-7" style="padding-right: 0;">
+                    <div class="formulaire">
+                        <div class="input-muanza">
+                            <span class="icone">
+                                <span class="fas fa-calendar"></span>
+                            </span>
+                            <div class="champ">
+                                <input class="fin" data-toggle="datepicker" placeholder="Fin de la location">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-5" style="margin: 0;">
+                    <div class="formulaire">
+                        <div class="input-muanza">
+                            <span class="icone">
+                                <span class="fas fa-clock"></span>
+                            </span>
+                            <div class="champ">
+                                <select style="padding-left: 40px;" [(ngModel)]="heureFin">
+                                    <option [ngValue]="h" *ngFor="let h of heures">
+                                        {{h}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2" style="margin: 0;">
+                    <div class="boutons">
+                        <button (click)="reserver(voiture)" class="muanza-bouton" style="width: 100%;">
+                            Réserver
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="les-voitures">
+        <div class="contenu">
+            <div class="row">
+                <div *ngIf="voiture" class="col-lg-6">
+                    <div [ngStyle]="{'background-image': 'url('+ voiture.image +')'}" class="une-voiture">
+
+                    </div>
+                    <div class="une-voiture-description" style="display: none;">
+                        <div class="une-voiture-categorie">
+                            {{voiture.categorie}} :
+                            {{voiture.modele}}
+                        </div>
+                        <div class="une-voiture-details">
+                            <span>
+                                {{voiture.sieges}} sièges,
+                                {{voiture.portes}} portes,
+                                {{voiture.transmission}}
+                            </span>
+                        </div>
+                        <h1 class="une-voiture-prix">
+                            {{voiture.prixJournalier}} FCFA / Jour
+                        </h1>
+                    </div>
+                    <div style="height: 25vh;">
+
+                    </div>
+                </div>
+                <div *ngIf="voiture" class="col-lg-6">
+                    <div [ngStyle]="{'background-image': 'url('+ voiture.image +')'}" class="une-voiture">
+
+                    </div>
+                    <div class="une-voiture-description" style="display: none;">
+                        <div class="une-voiture-categorie">
+                            {{voiture.categorie}} :
+                            {{voiture.modele}}
+                        </div>
+                        <div class="une-voiture-details">
+                            <span>
+                                {{voiture.sieges}} sièges,
+                                {{voiture.portes}} portes,
+                                {{voiture.transmission}}
+                            </span>
+                        </div>
+                        <h1 class="une-voiture-prix">
+                            {{voiture.prixJournalier}} FCFA / Jour
+                        </h1>
+                    </div>
+                    <div style="height: 25vh;">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

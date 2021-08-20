@@ -1,0 +1,124 @@
+.reservation-choix {
+    margin-top: 100px;
+    min-height: 100vh; 
+    @media screen and (max-width: 599px) {
+        margin-top: 60px;
+    }
+}
+
+.recommandations {
+    line-height: 1.2;
+
+    &-titre {
+        font-size: 40px;
+        font-weight: bold;
+        font-family: 'Montserrat';
+
+        @media screen and (max-width: 599px) {
+            font-size: 30px;
+        }
+
+    }
+
+    &-sous-titre {
+        font-size: 20px;
+        font-weight: 100;
+        @media screen and (max-width: 599px) {
+            font-size: 20px;
+        }
+    }
+
+    &-agences-mobile {
+        @media screen and (max-width: 599px) {
+            width: 100vw;
+            overflow-x: scroll;
+        }
+    }
+    &-agences {
+        margin-top: 30px;
+        @media screen and (max-width: 599px) {
+            width: 230vw;
+            padding-right: 30px;
+        }
+    }
+
+    .agence {
+        height: 300px;
+        @media screen and (max-width: 599px) {
+            height: 250px;
+        }
+        // background-color: #fafafa;
+        padding: 20px;
+        border: 2px solid rgba(15, 112, 183, 1);
+        // border: 2px solid orange;
+        border-radius: 5px;
+        position: relative;
+        margin-bottom: 20px;
+
+        &:hover {
+            border: 2px solid orange;
+            cursor: pointer;
+        }
+
+        &-nom {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        &-prix {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+
+        &-details {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            text-align: right;
+            // font-weight: bold;
+            // font-size: 1.2em;
+            margin-top: 10px;
+            padding: 15px;
+        }
+    }
+}
+
+.restes {
+    margin-top: 20px;
+    line-height: 1.25;
+    @media screen and (max-width: 599px) {
+        margin-top: 0px;
+    }
+
+    &-titre {
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    &-sous-titre {
+        font-size: 16px;
+        font-weight: 100;
+    }
+
+    &-agences {
+        margin-top: 30px;
+    }
+
+    .reste {
+        height: 150px;
+        background-color: #eee;
+        padding: 20px;
+        margin-bottom: 20px;
+        
+        border: 2px solid rgba(15, 112, 183, 1);
+        border-radius: 5px;
+
+        &-nom {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+<div style="height: 100vh; overflow: hidden;">
+    <div class="box-blanc">
+
+    </div>
+    <div class="box-paiement">
+        <div class="box-paiement-contenu">
+            <div class="contenu">
+
+            </div>
+        </div>
+    </div>
+    <div class="formulaire contenu">
+        <div class="formulaire-titre">
+            Votre numéro de téléphone principal
+        </div>
+        <div class="formulaire-input">
+            <div class="input-muanza">
+                <span class="icone">
+                    <span class="fas fa-phone"></span> +237
+                </span>
+                <input [(ngModel)]="tel" type="number" placeholder="Login">
+                <button class="btn btn-primary btn-lg" (click)="saveTelephone()" style="margin-left: 20px; background-color: rgba(15, 112, 183, 1);">
+                    Enregistrer
+                </button>
+            </div>
+        </div>
+        <div class="formulaire-indications">
+            Il sera utilisé pour vous notifier des transactions financières
+        </div>
+    </div>
+</div>

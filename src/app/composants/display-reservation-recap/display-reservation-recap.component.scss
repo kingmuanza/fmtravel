@@ -1,0 +1,54 @@
+* {
+    font-family: 'Montserrat';
+}
+
+.recap {
+    margin-top: 20px;
+
+    @media screen and (max-width: 599px) {
+        display: none;
+    }
+}
+
+.location-date {
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    background-color: #eee;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.voiture {
+    &-nom {
+        font-size: 1.8em;
+        font-weight: bold;
+    }
+
+    &-description {
+        font-size: 1.2em;
+        font-weight: 100;
+        margin-bottom: 20px;
+    }
+
+    &-image {
+        height: 120px;
+        background-color: #888;
+        background-position: center center;
+        background-size: cover;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+}
+
+.trajet {
+    &-libelle {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    &-villes {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+}

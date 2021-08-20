@@ -1,0 +1,135 @@
+.reservation {
+    padding-top: 100px;
+    @media screen and (max-width: 599px) {
+        padding-top: 60px;
+    }
+    min-height: 100vh;
+
+    
+    .recap {
+
+        @media screen and (max-width: 599px) {
+            display: none;
+        }
+    }
+
+
+    .etape {
+        height: 5px;
+        border-radius: 5px;
+
+        &.en-cours {
+            background-color: orange;
+        }
+
+        &.a-venir {
+            background-color: #aaa;
+        }
+
+        &.termine {
+            background-color: rgba(15, 112, 183, 1);
+        }
+    }
+}
+
+
+button {
+    @media screen and (max-width: 599px) {
+        width: 100%;
+    }
+
+}
+
+
+.informations {
+    margin-top: 20px;
+    line-height: 1.15;
+
+    @media screen and (max-width: 599px) {
+        margin-top: 0px;
+    }
+    .informations-titre {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    .informations-sous-titre {
+        line-height: 1.15;
+        margin-bottom: 10px;
+    }
+}
+
+
+.formulaire {
+    margin-top: 20px;
+    padding: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 10px;
+    border: 2px solid rgba(15, 112, 183, 1);
+    -webkit-box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+
+    
+    @media screen and (max-width: 599px) {
+        margin-top: 0px;
+        padding: 0px;
+        border: 0px solid rgba(15, 112, 183, 1);
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    div {
+        margin-bottom: 10px;
+    }
+
+    .boutons {
+        margin-top: 20px;
+    }
+}
+
+.agence {
+    &-nom {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    &-description {
+        font-size: 1.2em;
+        font-weight: 100;
+        margin-bottom: 20px;
+    }
+} 
+
+.trajet {
+    &-libelle {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    &-villes {
+        font-size: 1.2em;
+        font-weight: 100;
+        margin-bottom: 20px;
+    }
+}
+
+.location-date {
+    padding: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #eee;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.voiture {
+    &-nom {
+        font-size: 1.8em;
+        font-weight: bold;
+    }
+
+    &-description {
+        font-size: 1.2em;
+        font-weight: 100;
+        margin-bottom: 20px;
+    }
+}

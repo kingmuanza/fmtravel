@@ -1,0 +1,166 @@
+<div class="reservation">
+    <div class="contenu">
+        <div class="row">
+            <div class="col-4">
+                <div class="etape termine"></div>
+            </div>
+            <div class="col-4">
+                <div class="etape termine"></div>
+            </div>
+            <div class="col-4">
+                <div class="etape en-cours"></div>
+            </div>
+        </div>
+    </div>
+    <div class="contenu">
+        <div class="informations">
+            <p style="text-align: center;" *ngIf="reservation && reservation.depart">
+                Veuillez trouver ci joint vos informations de voyage
+            </p>
+            <p style="text-align: center;" *ngIf="reservation && reservation.voiture">
+                Veuillez trouver ci joint vos informations de la location
+            </p>
+            <div *ngIf="reservation && reservation.depart" class="ticket">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="qr-code">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div style="line-height: 1.5;" class="ticket-case">
+                            <div>
+                                <div style="line-height: 1.15;" class="muanza-bold">
+                                    {{reservation.depart.agence.nom}}
+                                </div>
+                                <div style="color: orange; margin-top: 5px; margin-bottom: 5px; font-size: 1.5em;">
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                </div>
+                            </div>
+                            <div class="ticket-infos">
+                                <div>
+
+                                    {{reservation.depart.trajet.villeDepart}} -
+                                    {{reservation.depart.trajet.villeArrivee}}
+                                </div>
+                                
+                                <div>
+                                    Date : {{reservation.date | date: 'dd MMMM yyyy'}}
+                                </div>
+                                <div>
+                                    Heure : {{reservation.date | date: 'HH:mm'}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div style="line-height: 1.5; position: relative; height: 300px;" *ngIf="reservation && reservation.responsable">
+                            <div class="user-nom">
+                                {{reservation.responsable.nom}}
+                            </div>
+                            <div class="ticket-infos">
+                                Tel : {{reservation.responsable.tel}}
+                            </div>
+                            <div class="ticket-infos">
+                                {{reservation.responsable.piece}}
+                                :
+                                {{reservation.responsable.numero}}
+                            </div>
+                            <div class="ticket-infos" style="line-height: 1.2; margin-bottom: 20px;">
+                                Paiement effectué via
+                                Orange Money
+                            </div>
+                            
+                            <div class="muanza-badge" style="text-align: center;">
+                                <span style="width: 300px">
+                                    Payé comptant
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="reservation && reservation.voiture" class="ticket">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="qr-code" [ngStyle]="{'background-image': 'url('+ reservation.voiture.image +')'}">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div style="line-height: 1.5;" class="ticket-case">
+                            <div>
+                                <div style="line-height: 1.15;" class="muanza-bold">
+                                    {{reservation.voiture.modele}}
+                                </div>
+                                <div style="color: orange; margin-top: 5px; margin-bottom: 5px; font-size: 1.5em;">
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                </div>
+                            </div>
+                            <div class="ticket-infos">
+                                <div>
+                                    {{reservation.voiture.sieges}} sièges,
+                                    {{reservation.voiture.portes}} portes,
+                                    {{reservation.voiture.transmission}}
+                                </div>
+                                <div>
+                                    <b>Date début</b> : {{reservation.dateDebut | date: 'dd MMMM yyyy'}} à {{reservation.dateDebut | date: 'HH:mm'}}
+                                </div>
+                                <div>
+                                    <b>Date fin </b>:  {{reservation.dateFin | date: 'dd MMMM yyyy'}} à {{reservation.dateFin | date: 'HH:mm'}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div style="line-height: 1.5; position: relative; height: 300px;" *ngIf="reservation && reservation.responsable">
+                            <div class="user-nom">
+                                {{reservation.responsable.nom}}
+                            </div>
+                            <div class="ticket-infos">
+                                Tel : {{reservation.responsable.tel}}
+                            </div>
+                            <div class="ticket-infos">
+                                {{reservation.responsable.piece}}
+                                :
+                                {{reservation.responsable.numero}}
+                            </div>
+                            <div class="ticket-infos" style="line-height: 1.2; margin-bottom: 20px;">
+                                Paiement effectué via
+                                Orange Money
+                            </div>
+                            
+                            <div class="muanza-badge" style="text-align: center;">
+                                <span style="width: 300px">
+                                    Payé comptant
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="boutons">
+                <button (click)="terminer()" class="btn btn-lg btn-primary" style="background-color: rgba(15, 112, 183, 1);">
+                    Terminer et revenir à l'accueil
+                </button>
+            </div>
+        </div>
+
+        <p style="margin-top: 100px; width: 50%;">
+            <small *ngIf="reservation && reservation.depart">
+                Veuillez vous présenter 30 min à l'agence avant votre départ pour confirmer votre voyage et
+                enregistrer vos bagages
+            </small>
+        </p>
+    </div>
+</div>

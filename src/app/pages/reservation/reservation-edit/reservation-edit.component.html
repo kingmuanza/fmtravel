@@ -1,0 +1,76 @@
+<div class="reservation">
+    <div class="contenu">
+        <div class="row">
+            <div class="col-4">
+                <div class="etape en-cours"></div>
+            </div>
+            <div class="col-4">
+                <div class="etape a-venir"></div>
+            </div>
+            <div class="col-4">
+                <div class="etape a-venir"></div>
+            </div>
+        </div>
+    </div>
+    <div class="contenu">
+        <div class="informations">
+            <div *ngIf="reservation" class="row">
+                <div class="col-lg-7">
+                    <app-display-reservation-recap [reservation]="reservation"></app-display-reservation-recap>
+                </div>
+                <div class="col-lg-5">
+                    <div *ngIf="reservation" class="formulaire">
+
+                        <div *ngIf="reservation.depart" style="margin-bottom: 20px;">
+                            <div class="informations-titre">
+                                Informations sur le voyageur
+                            </div>
+                            <div class="informations-sous-titre">
+                                Veuillez fournir les informations sur la personne qui voyage
+                            </div>
+                        </div>
+
+                        <div *ngIf="reservation.voiture" style="margin-bottom: 20px;">
+                            <div class="informations-titre">
+                                Informations personnelles
+                            </div>
+                            <div class="informations-sous-titre">
+                                Veuillez fournir vos informations personneles
+                            </div>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Nom complet</span>
+                            <input [(ngModel)]="responsable.nom" type="text" class="form-control">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Numéro de téléphone</span>
+                            <input [(ngModel)]="responsable.tel" type="text" class="form-control">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Pièce d'identification</span>
+                            <select [(ngModel)]="responsable.piece" type="text" class="form-control">
+                                <option value="CNI">
+                                    Carte National d'Identité
+                                </option>
+                                <option value="Passeport">
+                                    Passeport
+                                </option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Numéro de la pièce</span>
+                            <input [(ngModel)]="responsable.numero" type="text" class="form-control">
+                        </div>
+                        <div class="boutons">
+                            <button (click)="suivant()" class="btn btn-primary"
+                                style="background-color: rgba(15, 112, 183, 1);">
+                                Passer aux informations de paiement
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

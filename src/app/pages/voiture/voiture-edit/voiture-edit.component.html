@@ -1,0 +1,52 @@
+<div class="page">
+    <div class="entete contenu">
+        <div class="titre">
+            Créez un nouveau trajet
+        </div>
+    </div>
+    <div class="contenu">
+        <div class="row">
+            <div class="col-lg-8">
+                <div>
+                    <label>modèle</label>
+                    <input [(ngModel)]="voiture.modele" placeholder="Nom du modèle">
+                </div>
+                <div>
+                    <label>Catégorie</label>
+                    <input [(ngModel)]="voiture.categorie" placeholder="Catégorie">
+                </div>
+                <div>
+                    <label>Sieges</label>
+                    <input [(ngModel)]="voiture.sieges" type="number" placeholder="Sieges">
+                </div>
+                <div>
+                    <label>Portes</label>
+                    <input [(ngModel)]="voiture.portes" type="number" placeholder="Portes">
+                </div>
+                <div>
+                    <label>transmission</label>
+                    <select [(ngModel)]="voiture.transmission">
+                        <option value="Automatique">Automatique</option>
+                        <option value="Manuelle">Manuelle</option>
+                    </select>
+                </div>
+                <div>
+                    <label>prixJournalier</label>
+                    <input [(ngModel)]="voiture.prixJournalier" type="number" placeholder="prixJournalier">
+                </div>
+                <div>
+                    <button (click)="save()" class="button">Enregistrer</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <input (change)="uploadFile($event)" type="file">
+                <div class="image">
+                    <img [src]="photoURL">
+                </div>
+                <div *ngIf="encours">
+                    La photo est en cours de téléchargement
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

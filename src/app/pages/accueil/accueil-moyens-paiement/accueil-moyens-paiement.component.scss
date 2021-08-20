@@ -1,0 +1,28 @@
+
+.moyens-paiement {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    color: #303030;
+    text-align: center;
+
+    &-titre {
+        font-size: 40px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    &-soustitre {
+        margin-bottom: 40px;
+    }
+
+    .paiement-images {
+        margin-top: 20px;
+
+        img {
+            height: 150px;
+            margin-right: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    }
+}

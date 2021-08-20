@@ -1,0 +1,19 @@
+<div [ngStyle]="{'background-image': 'url('+ voiture.image +')'}" class="une-voiture">
+
+</div>
+<div class="une-voiture-description">
+    <div class="une-voiture-categorie">
+        {{voiture.categorie}} :
+        {{voiture.modele}}
+    </div>
+    <div class="une-voiture-details">
+        <span>
+            {{voiture.sieges}} sièges,
+            {{voiture.portes}} portes,
+            {{voiture.transmission}}
+        </span>
+    </div>
+    <h1 class="une-voiture-prix">
+        {{voiture.prixJournalier  | number:'':'fr-FR'}} FCFA / Jour
+    </h1>
+</div>

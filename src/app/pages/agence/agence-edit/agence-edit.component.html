@@ -1,0 +1,47 @@
+<div class="page">
+    <div class="contenu">
+        <div class="entete">
+            <div *ngIf="!agence" class="titre">
+                Ajoutez une nouvelle agence
+            </div>
+            <div *ngIf="agence" class="titre">
+                Modifier l'agence : {{agence.nom}}
+            </div>
+        </div>
+        <div class="contenu">
+            <form [formGroup]="form" (ngSubmit)="onSubmitForm()">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nom de l'agence</label>
+                            <input formControlName="nom" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Description de l'agence</label>
+                            <textarea formControlName="description" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Tel 1</label>
+                            <input formControlName="tel1" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Tel 2</label>
+                            <input formControlName="tel2" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 20px;">
+                    <button class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

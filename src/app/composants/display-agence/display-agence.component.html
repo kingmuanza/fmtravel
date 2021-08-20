@@ -1,0 +1,68 @@
+<div (click)="emit()" *ngIf="recommandation" class="agence shadow-1">
+    <div class="agence-nom">
+        {{agence.nom}}
+    </div>
+    <div style="color: orange; margin-bottom: 10px;">
+        <span class="fas fa-star"></span>
+        <span class="fas fa-star"></span>
+        <span class="fas fa-star"></span>
+        <span class="fas fa-star"></span>
+        <span class="fas fa-star"></span>
+    </div>
+    <p style="font-size: 0.9em;">
+        <small>
+            <b>Horaires de départ :</b> <br>
+            
+        </small>
+    </p>
+    <div class="agence-details">
+
+        <span *ngIf="date">
+            {{date | date: 'dd MMMM yyyy'}}
+        </span>
+        <br>
+        <span *ngIf="heure" class="heure">
+            {{bestDate | date: 'HH:mm'}}
+        </span>
+        <div class="agence-prix">
+            
+        </div>
+    </div>
+</div>
+
+
+<div (click)="emit()" *ngIf="!recommandation" class="depart-normal">
+    <div class="row">
+        <div class="col-5">
+            <div class="depart-normal-logo" style="">
+
+            </div>
+        </div>
+        <div class="col-7">
+            <div class="reste" style="padding-top: 10px;">
+                <div class="reste-nom">
+                    {{agence.nom}}
+                </div>
+                <div style="color: orange; margin-bottom: 0px;">
+                    <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span>
+                </div>
+                <div style="margin-top: 5px;">
+                    <div *ngFor="let trajet of trajets">
+                        {{trajet.villeDepart}} -
+                        {{trajet.villeArrivee}}
+                    </div>
+                </div>
+                <div>
+                    
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

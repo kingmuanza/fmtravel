@@ -1,0 +1,7 @@
+<div class="live-infos">
+    <ng-container *ngFor="let l of lives; let i=index" >
+        <div *ngIf="i >= nombre " [ngClass]="{'disparaitre': i === nombre}" class="live-info">
+            {{l}}
+        </div>
+    </ng-container>
+</div>

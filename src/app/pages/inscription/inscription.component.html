@@ -1,0 +1,99 @@
+<div style="height: 100vh; overflow: hidden;">
+    <div class="box-blanc">
+
+    </div>
+    <div class="box-paiement">
+        <div class="box-paiement-contenu">
+            <div class="contenu">
+            </div>
+        </div>
+    </div>
+    <div class="presentation-fm" style="">
+        <div class="contenu">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="display-carousel">
+                        <div style="height: 40vh;" id="carouselExampleControls" class="carousel slide"
+                            data-bs-ride="carousel" data-bs-interval="10000">
+
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <h1 class="titre-corps">
+                                        Créez un compte et faites vos achats en toute sécurité
+                                    </h1>
+                                    <div class="presentation">
+                                        Suspendisse semper cursus aliquet. Aliquam erat mauris, sagittis sit amet
+                                        eleifend
+                                        quis, viverra quis purus.
+                                        Suspendisse semper cursus aliquet. Aliquam erat mauris, sagittis sit amet
+                                        eleifend
+                                        quis, viverra quis purus.
+                                    </div>
+                                    <div class="boutons">
+                                        <button class="muanza-bouton-outline">
+                                            Créez un compte
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-12">
+                    <div class="muanza-image shadow-3">
+                        <div class="reservation">
+                            <div class="prediscours">
+                                Veuillez remplir le formulaire
+                            </div>
+                            <div class="formulaire">
+                                <div class="input-muanza">
+                                    <span class="icone">
+                                        <span class="fas fa-user"></span>
+                                    </span>
+                                    <input [(ngModel)]="noms" type="text" placeholder="Noms">
+                                </div>
+                            </div>
+                            <div class="formulaire">
+                                <div class="input-muanza">
+                                    <span class="icone">
+                                        <span class="fas fa-user"></span>
+                                    </span>
+                                    <input [(ngModel)]="prenoms" type="text" placeholder="Prénoms">
+                                </div>
+                            </div>
+                            <div class="formulaire">
+                                <div class="input-muanza">
+                                    <span class="icone">
+                                        <span class="fas fa-user"></span>
+                                    </span>
+                                    <input [(ngModel)]="email" type="email" placeholder="Login">
+                                </div>
+                            </div>
+                            <div class="formulaire">
+                                <div class="input-muanza">
+                                    <span class="icone">
+                                        <span class="fas fa-lock"></span>
+                                    </span>
+                                    <input [(ngModel)]="passe" type="password" placeholder="Mot de passe">
+                                </div>
+                            </div>
+                            <div class="formulaire">
+                                <div class="input-muanza">
+                                    <span class="icone">
+                                        <span class="fas fa-lock"></span>
+                                    </span>
+                                    <input type="password" placeholder="Confirmer Mot de passe">
+                                </div>
+                            </div>
+                            <div class="boutons ajust">
+                                <button (click)="inscription()" class="muanza-bouton">
+                                    S'inscrire
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

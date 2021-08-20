@@ -1,0 +1,13 @@
+.page {
+    padding: 10vmin;
+
+    .image {
+        height: 300px;
+        background-color: #ccc;
+        overflow-y: hidden;
+
+        img {
+            width: 100%;
+        }
+    }
+}

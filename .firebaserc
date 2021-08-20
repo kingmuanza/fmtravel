@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fmtravelling-muanza": {
+      "hosting": {
+        "fmtravel": [
+          "fmtravelling-muanza"
+        ]
+      }
+    }
+  }
+}

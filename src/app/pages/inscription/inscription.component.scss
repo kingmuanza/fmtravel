@@ -1,0 +1,257 @@
+.box-blanc {
+    height: 50vh;
+
+    @media screen and (max-width: 599px) {
+        display: none;
+    }
+
+    // background-color: purple;
+}
+
+.box-paiement {
+    // background-image: url('../../../assets/img/douala.jpg');
+    background-size: cover;
+    background-position: center center;
+    border-top-right-radius: 0%;
+
+    height: 50vh;
+    overflow: hidden;
+
+    // background-color: red;
+    @media screen and (max-width: 599px) {
+        display: none;
+    }
+
+    .box-paiement-contenu {
+        height: 50vh;
+        background-color: rgba(#ddd, 1);
+        // background-color: green;
+        border-top-right-radius: 100%;
+        width: 120vw;
+    }
+}
+
+.presentation-fm {
+
+    margin-top: -100vh;
+    padding-top: 120px;
+    height: 100vh;
+    overflow: hidden;
+    // background-color: green;
+
+    @media screen and (max-width: 599px) {
+        width: 100%;
+        margin-top: 0px;
+        height: 100vh;
+    }
+
+    .display-carousel {
+
+        @media screen and (max-width: 599px) {
+            display: none;
+        }
+    }
+
+    .titre-corps {
+        padding-top: 10px;
+        padding-bottom: 20px;
+        // font-weight: bold;
+        font-size: 40px;
+        line-height: 1.1;
+    }
+
+    .presentation {
+        font-size: 1.2em;
+        font-weight: 100;
+        padding-right: 10px;
+    }
+
+    .muanza-image {
+        // border: 2px solid orange;
+        background-image: url('../../../assets/img/douala.jpg');
+        background-size: cover;
+        background-position: center center;
+
+        margin-top: 0px;
+        // border-radius: 20px;
+
+        .reservation {
+            background: linear-gradient(to right, rgba(15, 112, 183, 0.9), rgb(21, 99, 155, 0.9));
+            padding: 40px;
+            padding-left: 50px;
+            // height: 480px;
+            // border-radius: 20px;l {
+
+            @media screen and (max-width: 599px) {
+                padding: 30px;
+                padding-top: 90px;
+                width: 100vw;
+                height: 100vh;
+            }
+        }
+
+        .discours {
+            line-height: 1.15;
+            font-weight: bold;
+            color: #efefef;
+            font-size: 2.2em;
+
+            div {
+                font-size: 0.7em;
+                opacity: 0.9;
+                font-weight: 100;
+            }
+        }
+
+        .formulaire {
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+            .input-muanza {
+                span.icone {
+                    font-size: 1.5em;
+                    color: white;
+                    width: 40px;
+                    padding-left: 20px;
+                    // background-color: red;
+                }
+
+                input {
+                    margin-left: -43px;
+                    background-color: rgba(#fff, 0.5);
+                    width: 100%;
+                    height: 45px;
+                    outline: none;
+                    border: 2px solid orange;
+                    border-radius: 10px;
+                    padding-left: 70px;
+                    padding-bottom: 5px;
+                    color: white;
+                    font-size: 1.1em;
+                    &::placeholder {
+                        /* modern browser */
+                        color: #eee;
+                        font-weight: 100;
+                    }
+                }
+            }
+        }
+
+        .muanza-image-buttons {
+            margin-top: 360px;
+            width: 100%;
+
+            .muanza-button {
+                background-color: #999;
+                height: 40px;
+                border-radius: 20px;
+            }
+        }
+
+    }
+
+    .muanza-texte {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: left;
+
+        @media screen and (max-width: 599px) {
+            text-align: center;
+        }
+
+    }
+}
+
+.boutons {
+    margin-top: 20px;
+    &.ajust {
+        margin-left: -3px;
+    }
+
+    button.muanza-rs {
+        margin: 0;
+        height: 50px;
+        border: 2px solid #ddd;
+        // color: white;
+        padding: 10px;
+        padding-left: 50px;
+        padding-right: 50px;
+        // border-radius: 10px;
+        background-color: #fff;
+
+    }
+
+    button.muanza-bouton {
+        margin: 0;
+        height: 50px;
+        background-color: orange;
+        // color: white;
+        padding: 10px;
+        padding-left: 50px;
+        padding-right: 50px;
+        border: none;
+        border-radius: 10px;
+
+    }
+
+    button.muanza-bouton-outline {
+        margin-top: -30px;
+        // height: 50px;
+        background: none;
+        // color: white;
+        font-size: 1.3em;
+        padding: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
+        border: 0px solid orange;
+        color: orange;
+        border-radius: 10px;
+        font-weight: bold;
+
+    }
+}
+
+.description {
+    text-align: right;
+
+    .ville {
+        color: white;
+        font-size: 1.2em;
+    }
+
+    .note {
+        color: orange;
+    }
+}
+
+.voiture {
+    font-size: 2.0em;
+    // background-color: orange;
+    // background-color: orange;
+
+    animation-name: rouler;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rouler {
+    0% {
+        transform: translateX(0%);
+    }
+
+    20% {
+        transform: translateX(25%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.prediscours {
+    font-size: 1.3em;
+    font-weight: 100;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: white;
+}

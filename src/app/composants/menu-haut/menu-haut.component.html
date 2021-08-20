@@ -1,0 +1,67 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark shadow-2">
+    <div class="container">
+        <a class="navbar-brand emirates" style="color: #fff; margin-left: -10px;">
+            FM Travelling
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="accueil" routerLinkActive="active">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="agence" routerLinkActive="active">Agences</a>
+                </li>
+                <!--
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="depart" routerLinkActive="active">Départs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="paiement" routerLinkActive="active">Paiements</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="reclamation" routerLinkActive="active">Réclamations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="reservation" routerLinkActive="active">Réservations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="trajet" routerLinkActive="active">Trajets</a>
+                </li>
+            -->
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="voiture" routerLinkActive="active">Location de voiture</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li *ngIf="user" class="nav-item dropdown monprofil" style="margin-right: -25px;">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span style="margin-right: 15px;">
+                            <span class="fas fa-user">
+
+                            </span>
+                        </span>
+                        {{user ? user.displayName: 'Mon profil'}}
+                    </a>
+                    <ul style="background-color: rgba(15, 112, 183);" class="dropdown-menu sous-menu" aria-labelledby="navbarDropdown">
+                        <li><a routerLink="monprofil" class="dropdown-item">Mon profil</a></li>
+                        <li><a class="dropdown-item">Historique</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" (click)="deconnexion()">Déconnexion</a></li>
+                    </ul>
+                </li>
+                <li *ngIf="!user" class="nav-item monprofil" style="margin-right: -25px;">
+                    <a class="nav-link" routerLink="connexion" routerLinkActive="active">
+                        Connexion
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

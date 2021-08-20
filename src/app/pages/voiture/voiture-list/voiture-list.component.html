@@ -1,0 +1,23 @@
+<div>
+
+    <div class="location-voiture">
+        <div class="contenu">
+            <h1 class="location-voiture-titre">
+                Location de voiture
+            </h1>
+            <p class="location-voiture-sous-titre">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            </p>
+        </div>
+    </div>
+    
+    <div class="les-voitures">
+        <div class="contenu">
+            <div class="row">
+                <div (click)="voirVoiture(voiture)" *ngFor="let voiture of voitures; let i=index" class="col-lg-4">
+                    <app-display-voiture [voiture]="voiture"></app-display-voiture>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

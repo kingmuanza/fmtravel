@@ -1,0 +1,142 @@
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import firebase from 'firebase';
+import { Agence } from 'src/app/models/agence.model';
+import { Depart } from 'src/app/models/depart.model';
+import { Trajet } from 'src/app/models/trajet.model';
+
+@Component({
+  selector: 'app-depart-edit',
+  templateUrl: './depart-edit.component.html',
+  styleUrls: ['./depart-edit.component.scss']
+})
+export class DepartEditComponent implements OnInit {
+
+  agences = new Array<Agence>();
+  trajets = new Array<Trajet>();
+  depart: Depart;
+  form: FormGroup;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private route: ActivatedRoute,
+  ) { }
+
+  ngOnInit(): void {
+    this.initForm();
+    this.route.paramMap.subscribe((paramMap) => {
+      const id = paramMap.get('id');
+      if (id) {
+        const db = firebase.firestore();
+        db.collection('departs-trap').doc(id).get().then((resultat) => {
+          const depart = resultat.data() as Depart;
+          this.depart = depart;
+          this.initForm();
+        }).catch((e) => {
+        });
+      }
+    });
+    this.getTrajets();
+    this.getAgences();
+  }
+
+  initForm() {
+    const heures = '08:00; 09:00; 10:00; 11:00; 12:00; 13:00; 14:00; 15:00';
+    let agence2 = new Agence();
+    let trajet2 = new Trajet();
+    if (this.depart) {
+      this.agences.forEach((a) => {
+        if (a.id === this.depart.agence.id) {
+          agence2 = a;
+        }
+      });
+      this.trajets.forEach((t) => {
+        if (t.id === this.depart.trajet.id) {
+          trajet2 = t;
+        }
+      });
+    }
+    this.form = this.formBuilder.group({
+      agence: [this.depart ? agence2 : null, Validators.required],
+      trajet: [this.depart ? trajet2 : null, Validators.required],
+      modele: [this.depart ? this.depart.modele : 'Gros porteur', Validators.required],
+      prix: [this.depart ? this.depart.prix : '5000', Validators.required],
+      vip: [this.depart ? this.depart.vip : true],
+      heures: [this.depart ? this.reverseHeures(this.depart.heures) : heures, Validators.required],
+    });
+  }
+
+  reverseHeures(dates: Array<Date>): string {
+    let heures = '';
+    dates.forEach((d) => {
+      const date = new Date(d);
+      heures = heures + date.toISOString().split('T')[1].substr(0, 5) + '; ';
+    });
+    return heures;
+  }
+
+  onSubmitForm() {
+    const value = this.form.value;
+    let depart = new Depart();
+
+    if (this.depart) {
+      depart = this.depart;
+    }
+
+    depart.agence = value.agence;
+    depart.trajet = value.trajet;
+    depart.modele = value.modele;
+    depart.agence = value.agence;
+    depart.prix = value.prix;
+    depart.vip = value.vip;
+    const horaires = value.heures.split(';');
+    const heures = new Array<Date>();
+    console.log('value.vip');
+    console.log(value.vip);
+    console.log('depart');
+    console.log(depart);
+
+    horaires.forEach((h: string) => {
+      const heure = new Date('2020-01-01 ' + h);
+      heures.push(heure);
+    });
+    depart.heures = heures;
+
+    const db = firebase.firestore();
+    db.collection('departs').doc(depart.id).set(JSON.parse(JSON.stringify(depart))).then(() => {
+      this.router.navigate(['reservation', 'choix']);
+    }).catch((e) => {
+    });
+
+  }
+
+  getTrajets() {
+    console.log('tajets debut');
+    const db = firebase.firestore();
+    db.collection('trajets').get().then((resultats) => {
+      resultats.forEach((resultat) => {
+        const trajet = resultat.data() as Trajet;
+        this.trajets.push(trajet);
+      });
+      console.log('tajets fin');
+      this.initForm();
+    }).catch((e) => {
+      console.log(e);
+    });
+  }
+
+  getAgences() {
+    const db = firebase.firestore();
+    db.collection('agences').get().then((resultats) => {
+      resultats.forEach((resultat) => {
+        const agence = resultat.data() as Agence;
+        this.agences.push(agence);
+      });
+      this.initForm();
+    }).catch((e) => {
+    });
+  }
+
+}

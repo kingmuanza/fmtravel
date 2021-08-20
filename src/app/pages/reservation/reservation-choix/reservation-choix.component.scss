@@ -1,0 +1,64 @@
+.reservation-choix {
+    margin-top: 100px;
+    min-height: 100vh; 
+    @media screen and (max-width: 599px) {
+        margin-top: 40px;
+    }
+}
+
+.recommandations {
+    line-height: 1.2;
+
+    &-agences-mobile {
+        @media screen and (max-width: 599px) {
+            width: 100vw;
+            overflow-x: scroll;
+        }
+    }
+    &-agences {
+        margin-top: 30px;
+        @media screen and (max-width: 599px) {
+            width: 230vw;
+            padding-right: 30px;
+        }
+    }
+
+}
+
+.restes {
+    margin-top: 20px;
+    line-height: 1.25;
+    @media screen and (max-width: 599px) {
+        margin-top: 0px;
+    }
+
+    &-titre {
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    &-sous-titre {
+        font-size: 16px;
+        font-weight: 100;
+    }
+
+    &-agences {
+        margin-top: 30px;
+    }
+
+    .reste {
+        height: 150px;
+        background-color: #eee;
+        padding: 20px;
+        margin-bottom: 20px;
+        
+        border: 2px solid rgba(15, 112, 183, 1);
+        border-radius: 5px;
+
+        &-nom {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+    }
+}

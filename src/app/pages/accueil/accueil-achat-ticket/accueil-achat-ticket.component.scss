@@ -1,0 +1,282 @@
+.box-blanc {
+    height: 300px;
+
+    @media screen and (max-width: 599px) {
+        display: none;
+    }
+
+    // background-color: purple;
+}
+
+.box-paiement {
+    // background-image: url('../../../assets/img/douala.jpg');
+    background-size: cover;
+    background-position: center center;
+    border-top-right-radius: 0%;
+
+    height: 300px;
+    overflow: hidden;
+
+    // background-color: red;
+    @media screen and (max-width: 599px) {
+        display: none;
+    }
+
+    .box-paiement-contenu {
+        height: 400px;
+        background-color: rgba(#ddd, 1);
+        // background-color: green;
+        border-top-right-radius: 100%;
+        width: 120vw;
+    }
+}
+
+.presentation-fm {
+
+    margin-top: -600px;
+    padding-top: 30px;
+    height: 550px;
+    overflow: hidden;
+
+    @media screen and (max-width: 599px) {
+        width: 100%;
+        margin-top: 0px;
+        height: 100vh;
+    }
+
+    .display-carousel {
+
+        @media screen and (max-width: 599px) {
+            display: none;
+        }
+    }
+
+    .titre-corps {
+        padding-top: 10px;
+        padding-bottom: 20px;
+        // font-weight: bold;
+        font-size: 40px;
+    }
+
+    .presentation {
+        font-size: 1.2em;
+        font-weight: 100;
+        padding-right: 10px;
+    }
+
+    .muanza-image {
+        // border: 2px solid orange;
+        background-image: url('../../../../assets/img/douala.jpg');
+        background-size: cover;
+        background-position: center center;
+        width: 400px;
+        overflow: hidden;
+
+        margin-top: 0px;
+        // border-radius: 20px;
+
+        .reservation {
+            background: linear-gradient(to right, rgba(15, 112, 183, 0.9), rgb(21, 99, 155, 0.9));
+            padding: 30px;
+            padding-left: 40px;
+            height: 480px;
+            width: 400px;
+            // border-radius: 20px;l {
+
+            @media screen and (max-width: 599px) {
+                padding: 30px;
+                padding-top: 90px;
+                width: 100vw;
+                height: 100vh;
+            }
+        }
+
+        .discours {
+            line-height: 1.15;
+            font-weight: bold;
+            color: #efefef;
+            font-size: 30px;
+            margin-bottom: 30px;
+
+            div {
+                font-size: 0.7em;
+                opacity: 0.9;
+                font-weight: 100;
+            }
+        }
+
+        .formulaire {
+            margin-top: 15px;
+            margin-bottom: 15px;
+
+            .input-muanza {
+                white-space: nowrap;
+                span.icone {
+                    font-size: 1.3em;
+                    color: #eee;
+                    width: 35px;
+                    margin-left: 15px;
+                    padding-top: 5px;
+                    overflow-x: hidden;
+                    // background-color: red;
+                    display: block;
+                    margin-top: 10px;
+                    height: 47px;
+                }
+
+                .champ {
+                    height: 47px;
+                    margin-top: -47px;
+                }
+
+                input, select {
+                    background-color: rgba(#fff, 0.3);
+                    width: 100%;
+                    outline: none;
+                    height: 47px;
+                    border: 2px solid orange;
+                    border-radius: 10px;
+                    padding-left: 50px;
+                    padding-bottom: 5px;
+                    color: white;
+                    font-size: 1.4em;
+
+                    option {
+                        color: #303030;
+                    }
+                }
+
+                select {
+                    padding-right: 10px;
+                    -webkit-appearance: none;
+                    appearance: none;
+                }
+
+                .select-wrapper {
+                    position: relative;
+                  }
+
+                .select-wrapper::after {
+                    content: "▼";
+                    font-size: 1rem;
+                    top: 6px;
+                    right: 10px;
+                    position: absolute;
+                  }
+            }
+        }
+
+        .muanza-image-buttons {
+            margin-top: 360px;
+            width: 100%;
+
+            .muanza-button {
+                background-color: #999;
+                height: 40px;
+                border-radius: 20px;
+            }
+        }
+
+    }
+
+    .muanza-texte {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: left;
+
+        @media screen and (max-width: 599px) {
+            text-align: center;
+        }
+
+    }
+}
+
+.boutons {
+    margin-top: 30px;
+    margin-left: -6px;
+
+    button.muanza-bouton {
+        height: 50px;
+        background-color: orange;
+        // color: white;
+        padding: 10px;
+        padding-left: 50px;
+        padding-right: 50px;
+        border: none;
+        border-radius: 10px;
+
+    }
+
+    button.muanza-bouton-outline {
+        margin-top: -30px;
+        // height: 50px;
+        background: none;
+        // color: white;
+        font-size: 1.3em;
+        padding: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
+        border: 0px solid orange;
+        color: orange;
+        border-radius: 10px;
+        font-weight: bold;
+
+    }
+}
+
+.boutons-carousel {
+    margin-top: 30px;
+
+    button.muanza-bouton-outline {
+        margin-top: -30px;
+        // height: 50px;
+        background: none;
+        // color: white;
+        font-size: 1.3em;
+        padding: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
+        border: 0px solid orange;
+        color: orange;
+        border-radius: 10px;
+        font-weight: bold;
+
+    }
+}
+
+.description {
+    text-align: right;
+
+    .ville {
+        color: white;
+        font-size: 1.2em;
+    }
+
+    .note {
+        color: orange;
+    }
+}
+
+.voiture {
+    font-size: 2.0em;
+    // background-color: orange;
+    // background-color: orange;
+
+    animation-name: rouler;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rouler {
+    0% {
+        transform: translateX(0%);
+    }
+
+    20% {
+        transform: translateX(25%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}

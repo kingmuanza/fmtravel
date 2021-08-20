@@ -1,0 +1,73 @@
+<div class="reservation">
+    <div class="contenu">
+        <div class="row">
+            <div class="col-4">
+                <div class="etape termine"></div>
+            </div>
+            <div class="col-4">
+                <div class="etape en-cours"></div>
+            </div>
+            <div class="col-4">
+                <div class="etape a-venir"></div>
+            </div>
+        </div>
+    </div>
+    <div class="contenu">
+        <div class="informations">
+            <div class="row">
+                
+                <div class="col-lg-7">
+                    <app-display-reservation-recap [reservation]="reservation"></app-display-reservation-recap>
+                </div>
+                <div class="col-lg-5">
+                    <div class="formulaire shadow-2">
+
+                        <div class="informations-titre">
+                            Informations de paiement
+                        </div>
+                        <div *ngIf="!waitingPaiement && !waitingEffectuee" class="informations-sous-titre">
+                            Veuillez fournir les informations de paiement
+                        </div>
+                        <div *ngIf="waitingPaiement" class="informations-sous-titre">
+                            En attente de confirmation du paiement.
+                            <br>
+                            Veuillez patienter...
+                        </div>
+                        <div *ngIf="waitingEffectuee" class="informations-sous-titre">
+                            Paiement effectué avec succès
+                        </div>
+                        <div *ngIf="!waitingPaiement && !waitingEffectuee">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Moyen de paiement</span>
+                                <select [(ngModel)]="moyen" type="text" class="form-control">
+                                    <option value="OM">
+                                        Orange Money
+                                    </option>
+                                    <option value="MTN">
+                                        MTN Mobile Money
+                                    </option>
+                                    <option value="VISA">
+                                        VISA
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Numéro</span>
+                                <input [(ngModel)]="numero" type="text" class="form-control">
+                            </div>
+                            <div class="boutons">
+                                <button (click)="suivant()" class="btn btn-primary"
+                                    style="background-color: rgba(15, 112, 183, 1);">
+                                    Procéder au paiement
+                                </button>
+                                <button *ngIf="reservation" (click)="precedent()" class="btn">
+                                    Revenir
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

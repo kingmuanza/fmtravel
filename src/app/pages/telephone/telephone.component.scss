@@ -1,0 +1,87 @@
+.box-blanc {
+    height: 50vh;
+
+    @media screen and (max-width: 599px) {
+        display: none;
+    }
+
+    // background-color: purple;
+}
+
+.box-paiement {
+    // background-image: url('../../../assets/img/douala.jpg');
+    background-size: cover;
+    background-position: center center;
+    border-top-right-radius: 0%;
+
+    height: 50vh;
+    overflow: hidden;
+
+    // background-color: red;
+    @media screen and (max-width: 599px) {
+        display: none;
+    }
+
+    .box-paiement-contenu {
+        height: 50vh;
+        background-color: rgba(#ddd, 1);
+        // background-color: green;
+        border-top-right-radius: 100%;
+        width: 120vw;
+    }
+}
+
+.formulaire {
+
+    margin-top: -100vh;
+    padding-top: 120px;
+    height: 100vh;
+    overflow: hidden;
+
+
+    &-titre {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    &-indications {
+        margin-top: 20px;
+        font-size: 0.8em;
+        color: #303030;
+    }
+
+    .input-muanza {
+        span.icone {
+            font-size: 1.5em;
+            color: #303030;
+            width: 220px;
+            padding-left: 20px;
+
+            // background-color: red;
+            .fas.fa-phone {
+                transform: scaleX(-1);
+                color: rgba(15, 112, 183, 1);
+            }
+        }
+
+        input {
+            margin-left: -108px;
+            background-color: rgba(#fff, 0.5);
+            width: 600px;
+            height: 50px;
+            outline: none;
+            border: 2px solid #999;
+            border-radius: 10px;
+            padding-left: 120px;
+            padding-bottom: 5px;
+            color: #101010;
+            font-size: 1.15em;
+
+            &::placeholder {
+                /* modern browser */
+                color: #eee;
+                font-weight: 100;
+            }
+        }
+    }
+}

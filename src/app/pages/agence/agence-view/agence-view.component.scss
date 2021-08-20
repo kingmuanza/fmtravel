@@ -1,0 +1,238 @@
+.reservation-choix {
+    margin-top: 100px;
+    min-height: 100vh;
+
+    @media screen and (max-width: 599px) {
+        margin-top: 60px;
+    }
+}
+
+.recommandations {
+    line-height: 1.2;
+    border-right: 1px dashed #aaa;
+    padding-right: 20px;
+
+    &-titre {
+        font-size: 30px;
+        font-weight: bold;
+        font-family: 'Montserrat';
+
+        @media screen and (max-width: 599px) {
+            font-size: 30px;
+        }
+
+    }
+
+    &-sous-titre {
+        font-size: 20px;
+        font-weight: 100;
+
+        @media screen and (max-width: 599px) {
+            font-size: 20px;
+        }
+    }
+
+    &-agences-mobile {
+        @media screen and (max-width: 599px) {
+            width: 100vw;
+            overflow-x: scroll;
+        }
+    }
+
+    &-agences {
+        margin-top: 10px;
+
+        @media screen and (max-width: 599px) {
+            width: 230vw;
+            padding-right: 30px;
+        }
+    }
+
+    .agence {
+        height: 300px;
+
+        @media screen and (max-width: 599px) {
+            height: 250px;
+        }
+
+        // background-color: #fafafa;
+        padding: 20px;
+        border: 2px solid rgba(15, 112, 183, 1);
+        // border: 2px solid orange;
+        border-radius: 5px;
+        position: relative;
+        margin-bottom: 20px;
+
+        &:hover {
+            border: 2px solid orange;
+            cursor: pointer;
+        }
+
+        &-nom {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        &-prix {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+
+        &-details {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            text-align: right;
+            // font-weight: bold;
+            // font-size: 1.2em;
+            margin-top: 10px;
+            padding: 15px;
+        }
+    }
+}
+
+.agence-trajet {
+    font-family: 'Montserrat';
+    font-size: 22px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid orange;
+    height: 70px;
+    overflow-y: hidden;
+
+    &-contenu {
+        padding-top: 70px;
+        transform: translateY(-50%);
+    }
+}
+
+.agence-depart-prix {
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: rgba(15, 112, 183, 1);
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.agence-horaire {
+    padding: 15px;
+    text-align: center;
+    background-color: #eee;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    &:hover {
+        // opacity: 0.9;
+        background-color: orange;
+    }
+}
+
+.station {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #aaa;
+
+    &-photo {
+        height: 100px;
+        background-color: #ddd;
+        margin-bottom: 10px;
+    }
+
+    &-titre {
+        font-weight: bold;
+        font-family: 'Montserrat';
+        font-size: 20px;
+    }
+
+    &-description {
+        line-height: 1.1;
+        margin-bottom: 10px;
+    }
+
+    &-localisation {
+        line-height: 1.1;
+        font-size: 0.9em;
+        cursor: pointer;
+        color: rgba(15, 112, 183, 1);
+    }
+}
+
+.trajet-details {
+    margin-bottom: 40px;
+}
+
+.datepicker {
+    z-index: 1600 !important;
+    /* has to be larger than 1050 */
+}
+
+
+.formulaire {
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    .input-muanza {
+        white-space: nowrap;
+        span.icone {
+            font-size: 1.3em;
+            color: #303030;
+            width: 35px;
+            margin-left: 15px;
+            padding-top: 5px;
+            overflow-x: hidden;
+            // background-color: red;
+            display: block;
+            margin-top: 10px;
+            height: 47px;
+        }
+
+        .champ {
+            height: 47px;
+            margin-top: -47px;
+        }
+
+        input, select {
+            background-color: rgba(#fff, 0.3);
+            width: 100%;
+            outline: none;
+            height: 47px;
+            border: 2px solid orange;
+            border-radius: 10px;
+            padding-left: 50px;
+            padding-bottom: 5px;
+            color: #303030;
+            font-size: 1.4em;
+
+            option {
+                color: #303030;
+            }
+        }
+
+        select {
+            padding-right: 10px;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .select-wrapper {
+            position: relative;
+          }
+
+        .select-wrapper::after {
+            content: "▼";
+            font-size: 1rem;
+            top: 6px;
+            right: 10px;
+            position: absolute;
+          }
+    }
+}

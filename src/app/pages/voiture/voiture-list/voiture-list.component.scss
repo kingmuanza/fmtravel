@@ -1,0 +1,32 @@
+.location-voiture {
+    height: 300px;
+    // background-color: #e0e0e0;
+    // background-color: red;
+    margin-top: 50px;
+    padding-top: 0px;
+    overflow: hidden;
+    // background: none;
+    line-height: 1.1;
+
+    .location-voiture-titre {
+        font-size: 40px;
+        margin-top: 40px;
+
+        @media screen and (max-width: 599px) {
+            margin-top: 0px;
+        }
+
+        line-height: 1.1;
+    }
+
+    .location-voiture-sous-titre {
+        margin-bottom: 20px;
+    }
+}
+
+.les-voitures {
+    // margin-top: 200px;
+    // min-height: 800px;
+
+    @media screen and (max-width: 599px) {}
+}

@@ -1,0 +1,58 @@
+<div style="height: 350px; background-color: #ddd;">
+
+</div>
+<div class="page" style="margin-top: -350px; min-height: 100vh;">
+    <div class="contenu">
+        <div class="entete">
+            <div class="entete__contenu">
+                <div class="titre">
+                    Nos recommandations
+                </div>
+                <div class="sous-titre">
+                    Nous vous recommandons les agences suivantes
+                </div>
+                <div class="recommandations-agences-mobile">
+                    <div class="recommandations-agences">
+                        <div class="row">
+                            <ng-container *ngFor="let depart of departs; let i=index">
+                                <div class="col-lg-3 col-3" *ngIf="i < 4">
+                                    <app-display-depart (rate)="onSelect(depart, $event)" (calculEcart)="onCalculEcart(depart, $event)" [depart]="depart" [recommandation]="true" [heure]="heure" [date]="date"></app-display-depart>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="besoin" class="contenu">
+        <div class="restes">
+            <div class="titre">
+                Agences ayant un départ de {{besoin.depart}} pour {{besoin.arrivee}}
+            </div>
+            <div class="sous-titre">
+                Le {{besoin.date | date: 'dd/MM'}} à {{besoin.date | date: 'HH:mm'}}
+            </div>
+            <div class="restes-sous-titre" style="display: none;">
+                <button class="btn btn-primary" (click)="creer()">
+                    Créer une agence
+                </button>
+                <button class="btn btn-success" (click)="creerTrajet()">
+                    Créer un trajet
+                </button>
+                <button class="btn btn-danger" (click)="creerDepart()">
+                    Créer un départ
+                </button>
+            </div>
+            <div class="restes-agences">
+                <div class="row">
+                    <ng-container *ngFor="let depart of departs; let i=index">
+                        <div class="col-lg-6">
+                            <app-display-depart [depart]="depart" [recommandation]="false" [heure]="heure"></app-display-depart>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

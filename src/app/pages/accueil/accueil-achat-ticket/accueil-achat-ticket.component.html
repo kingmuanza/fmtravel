@@ -1,0 +1,217 @@
+<div class="box-blanc">
+
+</div>
+<div class="box-paiement">
+    <div class="box-paiement-contenu">
+        <div class="contenu">
+        </div>
+    </div>
+</div>
+<div class="presentation-fm" style="">
+    <div class="contenu fort">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="display-carousel">
+                    <div style="height: 40vh;" id="carouselExampleControls" class="carousel slide"
+                        data-bs-ride="carousel" data-bs-interval="10000">
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <h1 class="titre-corps">
+                                    Achetez votre ticket en ligne
+                                </h1>
+                                <div class="presentation">
+                                    Suspendisse semper cursus aliquet. Aliquam erat mauris, sagittis sit amet eleifend
+                                    quis,
+                                    viverra
+                                    quis
+                                    purus. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                    Praesent volutpat augue arcu,
+                                    facilisis iaculis tortor facilisis nec.
+
+
+                                </div>
+                                <div class="boutons-carousel">
+                                    <button class="muanza-bouton-outline">
+                                        En savoir plus
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <h1 class="titre-corps">
+                                    Profitez d'un service de qualité
+                                </h1>
+                                <div class="presentation">
+                                    Suspendisse semper cursus aliquet. Aliquam erat mauris, sagittis sit amet eleifend
+                                    quis,
+                                    viverra
+                                    quis
+                                    purus. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                    Praesent volutpat augue arcu,
+                                    facilisis iaculis tortor facilisis nec.
+
+
+                                </div>
+                                <div class="boutons-carousel">
+                                    <button class="muanza-bouton-outline">
+                                        En savoir plus
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <h1 class="titre-corps">
+                                    Ne faites plus jamais la queue
+                                </h1>
+                                <div class="presentation">
+                                    Suspendisse semper cursus aliquet. Aliquam erat mauris, sagittis sit amet eleifend
+                                    quis,
+                                    viverra
+                                    quis
+                                    purus. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                    Praesent volutpat augue arcu,
+                                    facilisis iaculis tortor facilisis nec.
+
+
+                                </div>
+                                <div class="boutons-carousel">
+                                    <button class="muanza-bouton-outline">
+                                        En savoir plus
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-12">
+                <div class="muanza-image shadow-3">
+                    <div class="reservation">
+                        <div class="discours">
+                            Hi {{user ? user.displayName : ''}} !
+                            <div>
+                                Où souhaitez-vous vous rendre ?
+                            </div>
+                        </div>
+                        <div class="formulaire">
+                            <div class="input-muanza">
+                                <span class="icone">
+                                    <span class="fas fa-city"></span>
+                                </span>
+                                <div class="champ">
+                                    <select [(ngModel)]="depart" class="select-wrapper">
+                                        <option value="" style="color: #aaa;" default>
+                                            Ville de départ
+                                        </option>
+                                        <option value="Douala">
+                                            Douala
+                                        </option>
+                                        <option value="Yaoundé">
+                                            Yaoundé
+                                        </option>
+                                        <option value="Kribi">
+                                            Kribi
+                                        </option>
+                                        <option value="Bafoussam">
+                                            Bafoussam
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formulaire">
+                            <div class="input-muanza">
+                                <span class="icone">
+                                    <span class="fas fa-city"></span>
+                                </span>
+                                <div class="champ">
+                                    <select [(ngModel)]="arrivee" class="select-wrapper">
+                                        <option value="" style="color: #aaa;" default>
+                                            Ville d'arrivée
+                                        </option>
+                                        <option value="Douala">
+                                            Douala
+                                        </option>
+                                        <option value="Yaoundé">
+                                            Yaoundé
+                                        </option>
+                                        <option value="Kribi">
+                                            Kribi
+                                        </option>
+                                        <option value="Bafoussam">
+                                            Bafoussam
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formulaire">
+                            <div class="input-muanza">
+                                <span *ngIf="moyen === 'location'"  class="icone">
+                                    <span class="fas fa-car"></span>
+                                </span>
+                                <span *ngIf="moyen === 'bus'"  class="icone">
+                                    <span class="fas fa-bus-alt"></span>
+                                </span>
+                                <span *ngIf="moyen === 'vip'"  class="icone">
+                                    <span class="fas fa-bus"></span>
+                                </span>
+                                <div class="champ">
+                                    <select [(ngModel)]="moyen" class="select-wrapper">
+                                        <option style="color: #aaa;" default>
+                                            Moyen de transport
+                                        </option>
+                                        <option value="vip">
+                                            Bus VIP
+                                        </option>
+                                        <option value="bus">
+                                            Bus
+                                        </option>
+                                        <option value="location">
+                                            Location de voiture
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: -10px; padding-left: 3px;">
+                            <div class="col-7" style="padding-right: 0;">
+                                <div class="formulaire">
+                                    <div class="input-muanza">
+                                        <span class="icone">
+                                            <span class="fas fa-calendar"></span>
+                                        </span>
+                                        <div class="champ">
+                                            <input data-toggle="datepicker">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5" style="margin: 0;">
+                                <div class="formulaire">
+                                    <div class="input-muanza">
+                                        <span class="icone">
+                                            <span class="fas fa-clock"></span>
+                                        </span>
+                                        <div class="champ">
+                                            <select style="padding-left: 40px;" [(ngModel)]="heure">
+                                                <option [ngValue]="h" *ngFor="let h of heures">
+                                                    {{h}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="boutons">
+                            <button (click)="suivant()" class="muanza-bouton">
+                                Suivant
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

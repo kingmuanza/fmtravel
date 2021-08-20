@@ -1,0 +1,122 @@
+<div class="reservation-choix">
+    <div class="contenu">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="recommandations">
+                    <div class="recommandations-titre">
+                        {{agence ? agence.nom : 'Veuillez patienter...'}}
+                    </div>
+                    <div style="color: orange; margin-bottom: 5px; font-size: 1.4em;">
+                        <span class="fas fa-star"></span>
+                        <span class="fas fa-star"></span>
+                        <span class="fas fa-star"></span>
+                        <span class="fas fa-star"></span>
+                        <span class="fas fa-star"></span>
+                    </div>
+                    <div class="recommandations-sous-titre">
+                        {{agence ? agence.description : 'Veuillez patienter...'}}
+                    </div>
+                    <div *ngIf="agence && agence.tel1" class="recommandations-sous-titre">
+                        Tel : {{agence.tel1}}<span *ngIf="agence.tel2">, {{agence.tel2}}</span>
+                    </div>
+                    <div>
+                        <div class="recommandations-agences">
+                            <div class="row">
+                                <div class="col-lg-6" *ngFor="let depart of departs">
+                                    <div class="trajet-details">
+                                        <div class="agence-trajet">
+                                            <div class="agence-trajet-contenu">
+                                                <b>
+                                                    Trajet :
+                                                </b>
+                                                {{depart.trajet.villeDepart}} -
+                                                {{depart.trajet.villeArrivee}}
+                                            </div>
+                                        </div>
+                                        <div class="agence-depart-prix">
+                                            Prix :
+                                            {{depart.prix | number:'':'fr-FR'}} FCFA
+                                        </div>
+                                        <div>
+                                            Horaires de départ :
+                                            <div class="row">
+                                                <div class="col-6 col-lg-4" *ngFor="let heure of depart.heures">
+                                                    <div (click)="suivant(depart, heure)" class="agence-horaire">
+                                                        {{toDate(heure) | date: 'HH:mm'}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="station">
+                    <div class="station-titre">
+                        Agence de Douala
+                    </div>
+                    <div class="station-description">
+                        Situé derrière la Camrail vers l'entrée sud de la sattion de lavage
+                    </div>
+                    <div class="station-photo">
+                    </div>
+                    <div class="station-localisation">
+                        Voir la localisation sur Google Map
+                    </div>
+                </div>
+                <div class="station">
+                    <div class="station-titre">
+                        Agence de Douala
+                    </div>
+                    <div class="station-description">
+                        Situé derrière la Camrail vers l'entrée sud de la sattion de lavage
+                    </div>
+                    <div class="station-photo">
+                    </div>
+                    <div class="station-localisation">
+                        Voir la localisation sur Google Map
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Veuillez choisir une date</h5>
+                <button type="button" class="close" (click)="toggleModal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="formulaire">
+                        <div class="input-muanza">
+                            <span class="icone">
+                                <span class="fas fa-calendar"></span>
+                            </span>
+                            <div class="champ">
+
+                                <input data-toggle="datepicker">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="toggleModal()">Fermer</button>
+                <button type="button" class="btn btn-primary" (click)="continuer()">Continuer</button>
+            </div>
+        </div>
+    </div>
+</div>
